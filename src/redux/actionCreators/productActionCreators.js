@@ -1,4 +1,8 @@
-import { ADD_TO_CART, LOAD_PRODUCTS } from "../actionTypes/actionTypes";
+import {
+  ADD_TO_CART,
+  LOAD_PRODUCTS,
+  REMOVE_TO_CART,
+} from "../actionTypes/actionTypes";
 
 export const loadProduct = (products) => {
   return {
@@ -9,6 +13,12 @@ export const loadProduct = (products) => {
 export const addToCart = (product) => {
   return {
     type: ADD_TO_CART,
+    payload: product,
+  };
+};
+export const removeToCart = (product) => {
+  return {
+    type: REMOVE_TO_CART,
     payload: product,
   };
 };

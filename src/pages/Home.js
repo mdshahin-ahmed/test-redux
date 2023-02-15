@@ -5,15 +5,16 @@ import { loadProduct } from "../redux/actionCreators/productActionCreators";
 
 const Home = () => {
   const { products } = useSelector((state) => state);
-  console.log(products);
+  // console.log(products);
   const dispatch = useDispatch();
+
   useEffect(() => {
     // dispatch(loading());
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => dispatch(loadProduct(data)));
     //   .catch(dispatch(error()));
-  }, []);
+  }, [dispatch]);
 
   let content;
 
@@ -25,7 +26,7 @@ const Home = () => {
     content = (
       <div className="row">
         {products.map((product) => (
-          <div key={product._id} className=" col-md-4">
+          <div key={product._id} className="d-flex col-md-4">
             <Cart key={product._id} product={product}></Cart>
           </div>
         ))}

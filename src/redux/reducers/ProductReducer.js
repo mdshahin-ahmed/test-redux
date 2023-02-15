@@ -1,4 +1,8 @@
-import { ADD_TO_CART, LOAD_PRODUCTS } from "../actionTypes/actionTypes";
+import {
+  ADD_TO_CART,
+  LOAD_PRODUCTS,
+  REMOVE_TO_CART,
+} from "../actionTypes/actionTypes";
 
 const initialState = {
   products: [],
@@ -18,6 +22,11 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, action.payload],
+      };
+    case REMOVE_TO_CART:
+      return {
+        ...state,
+        cart: state.cart.filter((product) => product !== action.payload),
       };
 
     // case LOADING:
