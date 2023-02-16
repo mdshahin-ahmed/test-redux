@@ -7,7 +7,7 @@ import "../style.css";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { cart } = useSelector((state) => state);
+  const { cart, wishList } = useSelector((state) => state);
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -33,7 +33,7 @@ const Header = () => {
                 <div>
                   <AiFillHeart />
                 </div>
-                <div className="cartCount">0</div>
+                <div className="cartCount">{wishList.length}</div>
               </div>
             </Nav.Link>
           </Nav>

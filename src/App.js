@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/Header";
 import store from "./redux/Store";
 import AppRoutes from "./routes/AppRoutes";
+import "./style.css";
 
 function App() {
   return (
